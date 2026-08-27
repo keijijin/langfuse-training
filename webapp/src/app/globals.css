@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+  }
+  .dark {
+    --background: 15 23 42;
+    --foreground: 241 245 249;
+  }
+  body {
+    @apply bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100;
+  }
+}
+
+@layer components {
+  .prose pre {
+    @apply bg-slate-900 dark:bg-slate-950 rounded-lg overflow-x-auto;
+  }
+  .prose code {
+    @apply text-sm;
+  }
+  .prose :not(pre) > code {
+    @apply bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-primary-600 dark:text-primary-400;
+  }
+  .prose table {
+    @apply w-full border-collapse;
+  }
+  .prose th,
+  .prose td {
+    @apply border border-slate-200 dark:border-slate-700 px-3 py-2 text-left;
+  }
+  .prose th {
+    @apply bg-slate-50 dark:bg-slate-800 font-semibold;
+  }
+  .prose h1 { @apply text-3xl font-bold mt-8 mb-4; }
+  .prose h2 { @apply text-2xl font-bold mt-8 mb-3 pb-2 border-b border-slate-200 dark:border-slate-700; }
+  .prose h3 { @apply text-xl font-semibold mt-6 mb-2; }
+  .prose h4 { @apply text-lg font-semibold mt-4 mb-2; }
+  .prose p { @apply my-3 leading-relaxed; }
+  .prose ul { @apply my-3 pl-6 list-disc; }
+  .prose ol { @apply my-3 pl-6 list-decimal; }
+  .prose li { @apply my-1; }
+  .prose blockquote { @apply border-l-4 border-primary-500 pl-4 italic text-slate-600 dark:text-slate-400 my-4; }
+  .prose hr { @apply my-8 border-slate-200 dark:border-slate-700; }
+  .prose a { @apply text-primary-600 dark:text-primary-400 hover:underline; }
+  .prose strong { @apply font-semibold; }
+  .prose img { @apply rounded-lg my-4; }
+}
+
+.hljs {
+  @apply bg-transparent !important;
+}

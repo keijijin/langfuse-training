@@ -1,0 +1,10 @@
+webapp/node_modules
+webapp/.next
+webapp/scripts
+webapp/openshift
+**/.git
+**/README.md
+**/*.md.bak
+**/*.mp4
+**/code-examples
+webapp/public/videos

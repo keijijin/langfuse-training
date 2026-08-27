@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border: #e2e8f0;
+  }
+  .dark {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border: #334155;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Prose overrides ===== */
+.prose {
+  --tw-prose-body: var(--text-primary);
+  --tw-prose-headings: var(--text-primary);
+  --tw-prose-bold: var(--text-primary);
+  --tw-prose-links: #2563eb;
+  --tw-prose-code: var(--text-primary);
+}
+
+.dark .prose {
+  --tw-prose-links: #60a5fa;
+}
+
+.prose ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+.prose ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+}
+
+.prose ul ul {
+  list-style-type: circle;
+}
+
+.prose li::marker {
+  color: var(--text-secondary);
+}
+
+/* Inline code */
+.prose :not(pre) > code {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+  font-weight: 500;
+  color: #c7254e;
+}
+
+.dark .prose :not(pre) > code {
+  color: #f472b6;
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+  content: "";
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.85rem;
+  text-align: left;
+}
+
+.prose th {
+  background-color: var(--bg-secondary);
+  font-weight: 600;
+}
+
+.prose tr:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+/* Mermaid */
+.mermaid-container {
+  margin: 2rem 0;
+}
+
+.mermaid-container > div {
+  background: #ffffff !important;
+}
+
+.mermaid-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.mermaid-container .node rect,
+.mermaid-container .node circle,
+.mermaid-container .node polygon {
+  stroke-width: 1.5px;
+}
+
+.mermaid-container .edgeLabel {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.mermaid-container text {
+  fill: #1e293b !important;
+  font-size: 14px;
+}
+
+.mermaid-container .label {
+  color: #1e293b;
+}
+
+.mermaid-container .cluster rect {
+  fill: #f1f5f9 !important;
+  stroke: #94a3b8 !important;
+}
+
+.mermaid-container .cluster text {
+  fill: #334155 !important;
+}
+
+/* ===== Syntax Highlighting (GitHub-inspired) ===== */
+.hljs {
+  color: #e6edf3;
+  background: #161b22;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #8b949e;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+  color: #ff7b72;
+}
+
+.hljs-string,
+.hljs-attr,
+.hljs-addition {
+  color: #a5d6ff;
+}
+
+.hljs-number,
+.hljs-literal {
+  color: #79c0ff;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #d2a8ff;
+}
+
+.hljs-function .hljs-title,
+.hljs-title.function_ {
+  color: #d2a8ff;
+}
+
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+  color: #f0883e;
+}
+
+.hljs-variable,
+.hljs-template-variable {
+  color: #ffa657;
+}
+
+.hljs-property {
+  color: #79c0ff;
+}
+
+.hljs-params {
+  color: #e6edf3;
+}
+
+.hljs-meta {
+  color: #8b949e;
+}
+
+.hljs-deletion {
+  color: #ffa198;
+  background: #490202;
+}
+
+.hljs-addition {
+  color: #aff5b4;
+  background: #033a16;
+}
+
+.hljs-selector-class,
+.hljs-selector-id {
+  color: #7ee787;
+}
+
+.hljs-name,
+.hljs-tag {
+  color: #7ee787;
+}
+
+.hljs-attribute {
+  color: #79c0ff;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #ffa657;
+}
+
+.hljs-section {
+  color: #79c0ff;
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
